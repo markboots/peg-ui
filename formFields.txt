@@ -51,6 +51,39 @@ Additional fields depending on Mode:
 		- To Diffraction Order					Range: [1, 5]					Default: 1				Units: none
 			- (radio buttons) {Inside, Outside}
 			
-			
 
+B.  Grating Profile
+---------------------------
+- Profile Shape (radio buttons): {Rectangular, Triangular (Blazed), Trapezoidal, Sinusoidal}
+- Groove Density:								Range: [100, 20000] lines/mm	Default: 1000 lines/mm	Units: lines/mm
 
+Additional fields depending on Profile Shape:
+	~Rectangular~
+		- Groove Depth							Range: [1e-8, 0.1] um			Default: 0.008 um		Units: {nm, um}		(convert when changing?)
+		- Duty cycle							Range: [0.01, 0.99]				Default: 0.5			Units: none
+		
+	~Triangular (Blazed)~
+		- Blaze Angle							Range: [0.001, 89] deg			Default: 1 deg			Units: deg
+		- Anti-blaze Angle						Range: [0.001, 89] deg			Default: 30 deg			Units: deg
+	
+	~Trapezoidal~
+		- Blaze Angle							Range: [0.001, 89] deg			Default: 1 deg			Units: deg
+		- Anti-blaze Angle						Range: [0.001, 89] deg			Default: 30 deg			Units: deg
+		- Groove Depth							Range: [1e-8, 0.1] um			Default: 0.008 um		Units: {nm, um}		(convert when changing?)
+		- Valley Width							Range: [period*0.1, period*0.9]	Default: period*0.5		Units: {nm, um}		## period = 1/groove density
+	
+	~Sinusoidal~
+		- Groove Depth							Range: [1e-8, 0.1] um			Default: 0.008 um		Units: {nm, um}		(convert when changing?)
+
+C.  Material
+----------------------------
+- Substrate Material: (combo box) {Al, Au, C, Cr, Ir, MgF2, Mo, Ni, Ni2O3, Pt, Rh, Si, SiO2}	Default: SiO2
+- Coating: (check box)
+
+Additional options if coating enabled:
+	- Coating Material: (combo box) {Al, Au, C, Cr, Ir, MgF2, Mo, Ni, Ni2O3, Pt, Rh, Si, SiO2}	Default: Au
+	- Thickness:						Range: [1e-8, 0.5] um			Default: 0.05 um		Units: {nm, um}
+
+D.  Save As
+----------------------------
+- Grating name: (text)
