@@ -1,0 +1,56 @@
+1. Solver Options
+===================
+
+Maximum Fourier coefficient (N)					Range: [3, 70]					Default: 15				Units: none
+Integration accuracy 1e___						Range: [-9, -2]					Default: -5				Units: none			(combo box with {1e-9, 1e-8, 1e-7... 1e-2}?)
+
+2. New Calculation
+==================
+
+A.  Incidence Mode
+----------------------
+- Mode (radio buttons): {Constant Incidence, Constant Wavelength, Constant Included Angle}
+	Help text:
+		Constant Incidence: "Calculates grating efficiency over a range of wavelength or photon energy, at a constant incidence angle."
+		Constant Wavelength: "Calculates grating efficiency over a range of incidence angles, at a constant wavelength."
+		Constant Included Angle: "Calculates grating efficiency over a range of wavelengths or photon energy, adjusting the incidence to keep a constant angle between incident beam and a specified diffraction order. This is a common configuration for monochromators."
+
+- eVMode (radio buttons): {Wavelength, Photon Energy}
+
+Additional fields depending on Mode:
+	~Constant Incidence~:
+		- Incidence angle						Range: [0, 89.99]				Default: 88	deg			Units: deg
+		- Range (depends on eVMode)
+			~Wavelength~:
+				- Min, Max						Range: [0.04133, 40] nm			Default: (1, 4) nm		Units: {nm, um, A}  (convert when changing?)
+				- Increment						Range: [0.0001, Max-Min] nm		Default: 0.02 nm		Units: {nm, um, A}	(Use same unit selection as Min, Max)
+			~Photon Energy~:
+				- Min, Max						Range: [32, 30000] eV			Default: (300, 800) eV	Units: {eV, keV}  	(convert when changing?)
+				- Increment						Range: [1, Max-Min] eV			Default: 10 eV			Units: {eV, keV}	(Use same unit selection as Min, Max)
+	
+	~Constant Wavelength~:
+		- Range
+			- Min,Max							Range: [0, 89.99] deg			Default: (80, 89) deg	Units: deg
+			- Increment							Range: [0.01, Max-Min] deg		Default: 0.5 deg		Units: deg
+			
+		(Depending on eVMode)
+			- Wavelength						Range: [0.04133, 40] nm			Default: 3 nm			Units: {nm, um, A}
+			- Photon Energy						Range: [32, 30000] eV			Default: 410 eV			Units: {eV, keV}
+			
+	~Constant Included Angle~:
+		- Range (depends on eVMode)
+			~Wavelength~:
+				- Min, Max						Range: [0.04133, 40] nm			Default: (1, 4) nm		Units: {nm, um, A}  (convert when changing?)
+				- Increment						Range: [0.0001, Max-Min] nm		Default: 0.02 nm		Units: {nm, um, A}	(Use same unit selection as Min, Max)
+			~Photon Energy~:
+				- Min, Max						Range: [32, 30000] eV			Default: (300, 800) eV	Units: {eV, keV}  	(convert when changing?)
+				- Increment						Range: [1, Max-Min] eV			Default: 10 eV			Units: {eV, keV}	(Use same unit selection as Min, Max)
+				
+		- Included Angle						Range: [0.1, 89.99] deg			Default: 80 deg			Units: deg
+		
+		- To Diffraction Order					Range: [1, 5]					Default: 1				Units: none
+			- (radio buttons) {Inside, Outside}
+			
+			
+
+
